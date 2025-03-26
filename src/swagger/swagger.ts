@@ -3,7 +3,9 @@ import yaml from "js-yaml"
 import fs from "fs"
 import path from "path"
 
-const swaggerFilePath = path.join(process.env.LAMBDA_TASK_ROOT!, "api", "api-doc.yaml")
+const swaggerFilePath = process.env.LAMBDA_TASK_ROOT
+  ? path.resolve(process.env.LAMBDA_TASK_ROOT, "./netlify/functions/api/api-doc.yaml")
+  : path.join(__dirname, "../docs/api-doc.yaml")
 const swaggerSpec = yaml.load(
   fs.readFileSync(swaggerFilePath, "utf8"),
 ) as Record<string, any>
