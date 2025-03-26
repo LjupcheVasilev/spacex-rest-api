@@ -9,4 +9,4 @@ await esbuild.build({
 })
 
 // Copy API docs
-await fs.cp('./src/docs/api-doc.yaml', 'dist/api-docs.yaml')
+await fs.cp('./src/docs/api-doc.yaml', 'dist/api-doc.yaml')
