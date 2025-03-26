@@ -1,8 +1,9 @@
 import swaggerUi from "swagger-ui-express"
 import yaml from "js-yaml"
 import fs from "fs"
+import path from "path"
 
-const swaggerFilePath = "./dist/api-doc.yaml"
+const swaggerFilePath = path.join(process.cwd(), "dist", "api-doc.yaml")
 const swaggerSpec = yaml.load(
   fs.readFileSync(swaggerFilePath, "utf8"),
 ) as Record<string, any>
