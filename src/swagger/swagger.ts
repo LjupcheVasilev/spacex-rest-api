@@ -4,7 +4,7 @@ import fs from "fs"
 import path from "path"
 
 const swaggerFilePath = process.env.LAMBDA_TASK_ROOT
-  ? path.resolve(process.env.LAMBDA_TASK_ROOT, "./api-doc.yaml")
+  ? path.resolve(process.env.LAMBDA_TASK_ROOT, "./docs/api-doc.yaml")
   : path.join(__dirname, "/docs/api-doc.yaml")
 const swaggerSpec = yaml.load(
   fs.readFileSync(swaggerFilePath, "utf8"),
