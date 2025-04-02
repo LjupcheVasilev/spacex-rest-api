@@ -1,5 +1,4 @@
 import * as esbuild from 'esbuild'
-import fs from 'fs/promises'
 import { YAMLPlugin } from "esbuild-yaml"
 
 await esbuild.build({
@@ -7,6 +6,9 @@ await esbuild.build({
     bundle: true,
     platform: "node",
     outfile: 'dist/index.js',
+    plugins: [
+        YAMLPlugin()
+    ]
 })
 
 await esbuild.build({
