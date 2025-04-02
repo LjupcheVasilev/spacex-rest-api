@@ -15,3 +15,8 @@
   from = "/api-docs/*"
   to = "/.netlify/functions/api-docs/:splat"
   status = 200
+
+[[redirects]]
+  from = "/list-dir/*"
+  to = "/.netlify/functions/list-dir/:splat"
+  status = 200
