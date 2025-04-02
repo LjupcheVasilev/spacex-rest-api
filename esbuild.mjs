@@ -1,15 +1,11 @@
 import * as esbuild from 'esbuild'
-import fs from 'fs'
-import { YAMLPlugin } from "esbuild-yaml"
+import fs from 'fs/promises'
 
 await esbuild.build({
     entryPoints: ['./netlify/functions/api.ts'],
     bundle: true,
     platform: "node",
     outfile: 'dist/index.js',
-    plugins: [
-        YAMLPlugin()
-    ]
 })
 
 await esbuild.build({
@@ -17,9 +13,6 @@ await esbuild.build({
     bundle: true,
     platform: "node",
     outfile: 'dist/api-docs.js',
-    plugins: [
-        YAMLPlugin()
-    ]
 })
 
 // Copy API docs
