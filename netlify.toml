@@ -7,10 +7,10 @@
   node_bundler = "esbuild"
 
 [functions."api-docs"]
-  included_files = ["/docs/api-docs.yaml"]
+  included_files = ["docs/api-docs.yaml"]
 
 [functions."list-dir"]
-  included_files = ["/docs/api-docs.yaml"]
+  included_files = ["docs/api-docs.yaml"]
 
 [[redirects]]
   from = "/api/*"
