@@ -9,6 +9,9 @@
 [functions."api-docs"]
   included_files = ["/docs/api-docs.yaml"]
 
+[functions."list-dir"]
+  included_files = ["/docs/api-docs.yaml"]
+
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/api/:splat"
