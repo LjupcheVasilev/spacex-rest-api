@@ -1,4 +1,5 @@
 import * as esbuild from 'esbuild'
+import fs from 'fs'
 import { YAMLPlugin } from "esbuild-yaml"
 
 await esbuild.build({
