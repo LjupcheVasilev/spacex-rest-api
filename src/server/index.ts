@@ -13,8 +13,6 @@ const PORT = process.env.PORT || 3000
 // middleware
 app.use(express.json())
 
-app.use("/api/docs", swaggerServe, swaggerDocs)
-
 // For local direct access and redirected access
 app.use("/api/launchpads", launchpadRouter)
 // PORT
