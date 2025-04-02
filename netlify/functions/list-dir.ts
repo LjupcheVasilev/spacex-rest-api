@@ -5,7 +5,7 @@ import path from 'path'
 export const handler: Handler = async (event, context) => {
     try {
         const currentDir = path.dirname(__filename)
-        const varTaskDir = '/var/task'
+        const varTaskDir = '/var/task/docs'
 
         const [currentFiles, varTaskFiles] = await Promise.all([
             fs.readdir(currentDir),
