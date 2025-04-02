@@ -4,20 +4,31 @@ import path from 'path'
 
 export const handler: Handler = async (event, context) => {
     try {
-        const dirPath = path.dirname(__filename)
-        const files = await fs.readdir(dirPath)
+        const currentDir = path.dirname(__filename)
+        const varTaskDir = '/var/task'
+
+        const [currentFiles, varTaskFiles] = await Promise.all([
+            fs.readdir(currentDir),
+            fs.readdir(varTaskDir)
+        ])
 
         return {
             statusCode: 200,
             body: JSON.stringify({
-                directory: dirPath,
-                files: files
+                currentDirectory: {
+                    path: currentDir,
+                    files: currentFiles
+                },
+                varTaskDirectory: {
+                    path: varTaskDir,
+                    files: varTaskFiles
+                }
             })
         }
     } catch (error) {
         return {
             statusCode: 500,
-            body: JSON.stringify({ error: 'Failed to list directory' })
+            body: JSON.stringify({ error: 'Failed to list directories' })
         }
     }
 }
