@@ -1,6 +1,6 @@
 import express from "express"
 import dotenv from "dotenv"
-import { swaggerServe, swaggerDocs } from "../swagger/swagger.ts"
+import { swaggerServe, swaggerDocs } from "../swagger/swagger"
 import serverless from "serverless-http"
 
 

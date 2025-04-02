@@ -1,16 +1,11 @@
 import swaggerUi from "swagger-ui-express"
 import yaml from "js-yaml"
-import fs from "fs"
-import path from "path"
 
-const swaggerFilePath = process.env.LAMBDA_TASK_ROOT
-  ? path.resolve(process.env.LAMBDA_TASK_ROOT, "./api-doc.yaml")
-  : path.join(__dirname, "/docs/api-doc.yaml")
-const swaggerSpec = yaml.load(
-  fs.readFileSync(swaggerFilePath, "utf8"),
-) as Record<string, any>
+import swaggerSpec from "../../docs/api-doc.yaml?raw"
 
-export const swaggerDocs = swaggerUi.setup(swaggerSpec, {
+const parsedSpec = yaml.load(swaggerSpec) as Record<string, any>
+
+export const swaggerDocs = swaggerUi.setup(parsedSpec, {
   swaggerOptions: {
     supportedSubmitMethods: ["get", "post", "put", "delete"],
   },
