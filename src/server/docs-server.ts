@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3000
 // middleware
 app.use(express.json())
 
-app.use("/api-docs", swaggerServe, swaggerDocs)
+app.use("/api-doc", swaggerServe, swaggerDocs)
 
 if (process.env.NODE_ENV !== 'production') {
     const startServer = async () => {

@@ -9,10 +9,10 @@ await esbuild.build({
 })
 
 await esbuild.build({
-    entryPoints: ['./netlify/functions/api-docs.ts'],
+    entryPoints: ['./netlify/functions/api-doc.ts'],
     bundle: true,
     platform: "node",
-    outfile: 'dist/api-docs.js',
+    outfile: 'dist/api-doc.js',
 })
 
 // Copy API docs
